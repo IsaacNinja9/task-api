@@ -84,7 +84,7 @@ paths:
         '400':
           $ref: ../components/schemas/ValidationError.yaml
         '404':
-          description: Not Found
+          $ref: ../components/schemas/NotFoundError.yaml
 components:
   schemas:
     Task:
