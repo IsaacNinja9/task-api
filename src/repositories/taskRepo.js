@@ -13,7 +13,7 @@ export async function create(data) {
 
 export async function findOne(id){
   const task = prisma.task.findUnique({
-    where: id,
+    where: {id},
     select:
       {
         id: true,
@@ -21,6 +21,6 @@ export async function findOne(id){
         completed: true
       }
   });
-  
+
   return task;
 }
