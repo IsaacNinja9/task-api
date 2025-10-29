@@ -45,3 +45,30 @@ post:
             $ref: ../components/schemas/Task.yaml
     '400':
       $ref: ../components/responses/BadRequest.yaml
+
+/tasks/{id}:
+  get:
+  summary: List a task with given id
+  tags:
+    - Tasks
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: Filters task by id
+      schema:
+        type: integer
+        example: 2
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Task.yaml
+    '400':
+      $ref: ../components/schemas/ValidationError.yaml
+    '404':
+      description: Not Found
